@@ -116,28 +116,28 @@
         <section>
             <h2>Contacto</h2>
 
-            <form class="formulario">
+            <form class="formulario" id="formulario-contacto">
                 <fieldset>
                     <legend>Contactanos llenando todos los campos</legend>
                     <div class="contenedor-campos">
                         <div class="campo">
                             <label>Nombre</label>
-                            <input class="input-text" type="text" placeholder="Nombre">
+                            <input class="input-text" type="text" placeholder="Nombre" id="nombre">
                         </div>
 
                         <div class="campo">
                             <label>Teléfono</label>
-                            <input class="input-text" type="tel" placeholder="Teléfono">
+                            <input class="input-text" type="tel" placeholder="Teléfono" id="telefono">
                         </div>
 
                         <div class="campo">
                             <label>Correo</label>
-                            <input class="input-text" type="email" placeholder="Tu Email">
+                            <input class="input-text" type="email" placeholder="Tu Email" id="email">
                         </div>
 
                         <div class="campo">
                             <label>Mensaje</label>
-                            <textarea class="input-text"></textarea>
+                            <textarea class="input-text" id="mensaje"></textarea>
                         </div>
                     </div> <!-- .contenedor-campos -->
 
@@ -154,6 +154,29 @@
         <p>Todos los derechos reservados. Oscar Nieto </p>
     </footer>
 
-</body>
+    <script>
+        document.getElementById('formulario-contacto').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mensaje = document.getElementById('mensaje').value.trim();
 
+            if (!nombre || !telefono || !email || !mensaje) {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Por favor, ingresa un correo electrónico válido.');
+                return;
+            }
+
+            alert('Formulario enviado correctamente.');
+            this.submit();
+        });
+    </script>
+</body>
 </html>
