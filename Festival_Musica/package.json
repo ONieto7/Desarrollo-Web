@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "sass": "sass --watch src/scss:build/css",
-    "hola": "gulp hola"
+    "dev": "gulp dev"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.1",
     "sass": "^1.86.0"
   }
 }
