@@ -369,4 +369,49 @@ img {
 
 body > section {
   padding: 10rem 0;
+}
+
+.header {
+  background-color: #4CB8B3;
+}
+@media (max-width: 768px) {
+  .header {
+    color: white;
+    width: 10px;
+    height: 1px;
+  }
+}
+.header .contenido-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+.header h1 {
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.navegacion-principal {
+  display: flex;
+  gap: 2rem;
+}
+.navegacion-principal a {
+  color: #FFFFFF;
+  font-size: 2.4rem;
+}
+.navegacion-principal a:hover {
+  color: #fdda00;
+}
+
+.header-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.nav-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 95%;
 }/*# sourceMappingURL=app.css.map */
