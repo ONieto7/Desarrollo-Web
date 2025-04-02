@@ -3,8 +3,8 @@
 
 .lineup {
     background-color: v.$rosa;
-
-    h3, .dia {
+    h3, 
+    .dia {
         text-align: center;
         color: v.$blanco;
     }
@@ -21,7 +21,7 @@
     }
 }
 .escenario {
-    padding: 2rem;
+    padding-top: 2rem;
     .nombre-escenario {
         font-size: 3rem;
         font-weight: 900;
@@ -36,7 +36,7 @@
 
 .calendario {
     @include m.resetear-lista;
-    
+
     li {
         padding: 2.5rem;
         font-weight: 700;

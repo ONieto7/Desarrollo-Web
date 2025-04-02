@@ -501,7 +501,8 @@ body > section {
 .lineup {
   background-color: #F53756;
 }
-.lineup h3, .lineup .dia {
+.lineup h3,
+.lineup .dia {
   text-align: center;
   color: #FFFFFF;
 }
@@ -524,7 +525,7 @@ body > section {
 }
 
 .escenario {
-  padding: 2rem;
+  padding-top: 2rem;
 }
 .escenario .nombre-escenario {
   font-size: 3rem;
