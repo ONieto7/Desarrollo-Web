@@ -25,7 +25,10 @@ function crearGaleria() {
 
     for(let i = 1; i <= CANTIDAD_IMAGENES; i++) {
         const imagen = document.createElement('IMG')
-        imagen.src = `src/img/gallery/full/${i}.jpg`
+        imagen.loading = 'lazy'
+        imagen.width = '300'
+        imagen.height = '200'
+        imagen.src = `src/img/gallery/thumb/${i}.jpg`
         imagen.alt = 'Imagen Galería'
 
         // Event Handler
@@ -39,6 +42,11 @@ function crearGaleria() {
 
 function mostrarImagen(i) {
     const imagen = document.createElement('IMG')
+    // Ajustar tamaño fijo
+    imagen.style.width = '60%';
+    imagen.style.maxWidth = '600px'; 
+    imagen.style.height = 'auto'; 
+
     imagen.src = `src/img/gallery/full/${i}.jpg`
     imagen.alt = 'Imagen Galería'
 

@@ -34,7 +34,10 @@
     }
 
     img {
-        max-width: 100rem;
+        max-width: 60rem;
+        width: 80%; 
+        height: auto;
+        object-fit: contain;
     }
 }
 
