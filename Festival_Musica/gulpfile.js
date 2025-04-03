@@ -7,13 +7,12 @@ import gulpSass from 'gulp-sass'
 
 const sass = gulpSass(dartSass)
 
-
 import terser from 'gulp-terser'
 import sharp from 'sharp'
 
 export function js( done ) {
     src('src/js/app.js')
-        .pipe( terser() )
+        .pipe(terser())
         .pipe( dest('build/js') ) 
 
     done()
@@ -60,7 +59,7 @@ export async function crop(done) {
 export async function imagenes(done) {
     const srcDir = './src/img';
     const buildDir = './build/img';
-    const images =  await glob('./src/img/**/*.{jpg,png}')
+    const images =  await glob('./src/img/**/*{jpg,png}')
 
     images.forEach(file => {
         const relativePath = path.relative(srcDir, path.dirname(file));
@@ -78,16 +77,18 @@ function procesarImagenes(file, outputSubDir) {
     const extName = path.extname(file)
     const outputFile = path.join(outputSubDir, `${baseName}${extName}`)
     const outputFileWebp = path.join(outputSubDir, `${baseName}.webp`)
+    const outputFileAvif = path.join(outputSubDir, `${baseName}.avif`)
 
     const options = { quality: 80 }
     sharp(file).jpeg(options).toFile(outputFile)
     sharp(file).webp(options).toFile(outputFileWebp)
+    sharp(file).avif().toFile(outputFileAvif)
 }
 
 export function dev() {
     watch('src/scss/**/*.scss', css)
     watch('src/js/**/*.js', js)
-    watch('src/js/**/*.{png,jpg}', js)
+    watch('src/img/**/*.{png,jpg}', imagenes)
 }
 
 export default series( crop, js, css, imagenes, dev )
